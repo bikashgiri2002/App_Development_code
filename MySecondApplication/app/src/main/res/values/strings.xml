@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">My Second Application</string>
+    <string name="app_name">AllViewsAndButton</string>
+    <string-array name="country">
+        <item>India</item>
+        <item>USA</item>
+        <item>England</item>
+        <item>Russia</item>
+    </string-array>
 </resources>
