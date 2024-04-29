@@ -6,8 +6,24 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     tools:context=".MainActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBar"
+        android:background="?attr/colorPrimary">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolBar"
+            app:title="Top App Bar"
+            app:subtitle="Have fun"
+            app:titleTextColor="?attr/colorOnPrimary"
+            app:subtitleTextColor="?attr/colorOnPrimary"
+            app:navigationIcon="@drawable/baseline_menu_24"
+            app:navigationIconTint="?attr/colorOnPrimary"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
 
     <TextView
@@ -19,7 +35,8 @@
         android:text="Jay Jagannath"
         android:textColor="@color/white"
         android:textSize="24sp"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/appBar">
 
     </TextView>
 

@@ -3,6 +3,7 @@ package com.devbiku.mysecondapplication;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     ToggleButton showText;
     ArrayAdapter spinnerAdapter;
     Spinner countrySpinner;
+    TextView countryCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,10 +91,34 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        countryCode=findViewById(R.id.txt_country_code);
         countrySpinner=findViewById(R.id.spinner_country);
         spinnerAdapter=ArrayAdapter.createFromResource(this,R.array.country,android.R.layout.simple_spinner_item);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         countrySpinner.setAdapter(spinnerAdapter);
+        countrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String country=parent.getItemAtPosition(position).toString();
+                if (country.equalsIgnoreCase("India")){
+                   countryCode.setText("+91");
+               }
+                else if (country.equalsIgnoreCase("usa")){
+                    countryCode.setText("+1");
+                }
+               else if (country.equalsIgnoreCase("england")){
+                    countryCode.setText("+44");
+                }
+                else if (country.equalsIgnoreCase("russia")){
+                    countryCode.setText("+7");
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 }

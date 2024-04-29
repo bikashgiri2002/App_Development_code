@@ -5,4 +5,9 @@
     <color name="blue">#0226EA</color>
     <color name="yellow">#F3DC13</color>
     <color name="green">#13EB1C</color>
+    <color name="purple200">#FFBB86FC</color>
+    <color name="purple500">#FF6200EE</color>
+    <color name="purple700">#FF3700B3</color>
+    <color name="teal200">#FF03DAC5</color>
+    <color name="teal700">#FF018786</color>
 </resources>
