@@ -12,16 +12,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/appBar"
         android:background="?attr/colorPrimary">
+
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/toolBar"
-            app:title="Top App Bar"
-            app:subtitle="Have fun"
-            app:titleTextColor="?attr/colorOnPrimary"
-            app:subtitleTextColor="?attr/colorOnPrimary"
+            app:menu="@menu/toolbar_menu"
             app:navigationIcon="@drawable/baseline_menu_24"
-            app:navigationIconTint="?attr/colorOnPrimary"/>
+            app:navigationIconTint="?attr/colorOnPrimary"
+            app:subtitle="Have fun"
+            app:subtitleTextColor="?attr/colorOnPrimary"
+            app:title="Top App Bar"
+            app:titleTextColor="?attr/colorOnPrimary" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

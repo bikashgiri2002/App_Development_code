@@ -17,10 +17,13 @@ import android.widget.ToggleButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.appbar.MaterialToolbar;
 
 public class MainActivity extends AppCompatActivity {
     TextView text,text2;
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter spinnerAdapter;
     Spinner countrySpinner;
     TextView countryCode;
+    MaterialToolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        toolbar=findViewById(R.id.toolBar);
 
     }
 }
