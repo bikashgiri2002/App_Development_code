@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="refresh"
+        android:icon="@drawable/baseline_refresh_24"
+        app:showAsAction="always"
+        android:id="@+id/refresh_icon"
+        />
+    <item
+        android:title="search"
+        android:icon="@drawable/baseline_search_24"
+        app:showAsAction="always"
+        android:id="@+id/search_icon"
+        />
+    <item
+        android:title="setting"
+        app:showAsAction="never"
+        android:id="@+id/setting"
+        />
+    <item
+        android:title="Exit"
+        app:showAsAction="never"
+        android:id="@+id/exit"
+        />
+
+</menu>

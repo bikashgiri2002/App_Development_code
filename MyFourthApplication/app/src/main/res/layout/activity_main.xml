@@ -6,6 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+<!--    it'will used for search button-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:visibility="invisible"
+        android:id="@+id/search_country"
+        android:padding="5dp"/>
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -15,7 +23,16 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:navigationIcon="@drawable/baseline_arrow_back_24"
+            app:navigationIconTint="?attr/colorOnPrimary"
+            app:subtitle="Find Country Name"
+            app:subtitleTextColor="?attr/colorOnPrimary"
+            app:title="Forth App"
+            app:titleTextColor="?attr/colorOnPrimary"
+            app:menu="@menu/tool_bar_menu"
+            android:id="@+id/tool_bar">
 
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -27,9 +44,10 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:text="country name will show here"
-        android:textSize="20sp"
+        android:textSize="28sp"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints">
+    </TextView>
 
     <ListView
         android:id="@+id/list_country_name"
