@@ -7,23 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <TextView
         android:id="@+id/txt_country_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="country name will show here"
-        app:layout_constraintBottom_toTopOf="@+id/list_country_name"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        android:textSize="20sp"
         android:padding="5dp"
-        />
+        android:text="country name will show here"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        tools:ignore="MissingConstraints" />
 
     <ListView
         android:id="@+id/list_country_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="52dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_country_name">
+
+
+    </ListView>
 </androidx.constraintlayout.widget.ConstraintLayout>
