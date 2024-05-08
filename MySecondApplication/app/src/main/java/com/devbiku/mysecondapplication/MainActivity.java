@@ -123,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        toolbar=findViewById(R.id.toolBar);
 
     }
 }
