@@ -1,6 +1,5 @@
 package com.devbiku.stonepaperscissor;
 
-import static com.devbiku.stonepaperscissor.R.id.stone;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -40,12 +39,23 @@ public class MainActivity extends AppCompatActivity {
         user = findViewById(R.id.user_choose_img);
         computer = findViewById(R.id.computer_choose_img);
         userClick = findViewById(R.id.userclicked);
-        stone = findViewById(R.id.stone);
-        paper = findViewById(R.id.paper);
-        scissor = findViewById(R.id.scissor);
+        stone = findViewById(R.id.stone_radio);
+        paper = findViewById(R.id.paper_radio);
+        scissor = findViewById(R.id.scissor_radio);
         displayUserScore =findViewById(R.id.txt_user_score);
         displayComputerScore =findViewById(R.id.txt_computer_score);
-        
+        userClick.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.stone_radio){
+                    user.setImageResource(R.drawable.stone_final);
+                }else if (checkedId == R.id.paper_radio){
+                    user.setImageResource(R.drawable.paper_final);
+                }else{
+                    user.setImageResource(R.drawable.sciccors_final);
+                }
+            }
+        });
 
     }
 

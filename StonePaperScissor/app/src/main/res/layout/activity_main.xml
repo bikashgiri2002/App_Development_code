@@ -64,6 +64,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/circular_view"
+        android:contentDescription="user_choose"
         android:src="@drawable/stone_final"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,6 +90,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:background="@drawable/circular_view"
+        android:contentDescription="computer_choose"
         android:src="@drawable/stone_final"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,25 +112,37 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
-            android:id="@+id/stone"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/stone_radio"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_marginEnd="20dp"
-            android:button="@drawable/precious_stone_diamond_svgrepo_com" />
+            android:background="@drawable/custom_selected"
+            android:button="@android:color/transparent"
+            android:drawableTop="@drawable/precious_stone_diamond_svgrepo_com"
+            android:text="stone"
+            android:textAlignment="center" />
 
         <RadioButton
-            android:id="@+id/paper"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/paper_radio"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_marginHorizontal="20dp"
-            android:button="@drawable/paper_text_svgrepo_com" />
+            android:background="@drawable/custom_selected"
+            android:button="@android:color/transparent"
+            android:drawableTop="@drawable/paper_text_svgrepo_com"
+            android:text="paper"
+            android:textAlignment="center" />
 
         <RadioButton
-            android:id="@+id/scissor"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/scissor_radio"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_marginHorizontal="20dp"
-            android:button="@drawable/scissor_cut_cutter_scissors_office_school_svgrepo_com" />
+            android:background="@drawable/custom_selected"
+            android:button="@android:color/transparent"
+            android:drawableTop="@drawable/scissor_cut_cutter_scissors_office_school_svgrepo_com"
+            android:text="scissor"
+            android:textAlignment="center" />
 
     </RadioGroup>
 
