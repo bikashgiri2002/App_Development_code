@@ -56,7 +56,36 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+    }
+    public void clear(View view){
+        stone.setChecked(false);
+        paper.setChecked(false);
+        scissor.setChecked(false);
+    }
+    public void check(int computerChoose, int userChoose){
+        switch (userChoose){
+            case 0:
+                if (computerChoose==1){
+                    computerScore++;
+                } else if (computerChoose==2) {
+                    userScore++;
+                }
+                break;
+            case 1:
+                if (computerChoose==2) {
+                    computerScore++;
+                } else if (computerChoose==0) {
+                    userScore++;
+                }
+                break;
+            case 2:
+                if (computerChoose == 0){
+                    computerScore++;
+                } else if (computerChoose == 1) {
+                    userScore++;
+                }
+                break;
+        }
     }
 
 }
