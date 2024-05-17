@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SCORE"
@@ -17,21 +18,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044" />
+        app:layout_constraintVertical_bias="0.168" />
 
     <TextView
         android:id="@+id/txt_user_score"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="64dp"
         android:gravity="center"
         android:text="0"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txt_user_label"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_computer_score"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/txt_computer_score"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_computer_score"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txt_computer_score"
@@ -44,8 +47,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/computer_choose_label"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.647"
-        app:layout_constraintStart_toEndOf="@+id/txt_user_score" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txt_user_score"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txt_user_label"
@@ -68,10 +73,10 @@
         android:src="@drawable/stone_final"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintVertical_bias="0.526" />
 
     <TextView
         android:id="@+id/computer_choose_label"
@@ -82,8 +87,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/computer_choose_img"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.693"
+        app:layout_constraintStart_toEndOf="@+id/txt_user_label" />
 
     <ImageView
         android:id="@+id/computer_choose_img"
@@ -92,59 +97,81 @@
         android:background="@drawable/circular_view"
         android:contentDescription="computer_choose"
         android:src="@drawable/stone_final"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:tag="3"
+        app:layout_constraintBottom_toBottomOf="@+id/user_choose_img"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintHorizontal_bias="0.881"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintVertical_bias="1.0" />
 
-    <RadioGroup
-        android:id="@+id/userclicked"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/result_txt"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="136dp"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:layout_marginTop="64dp"
+        android:padding="2dp"
+        android:text="result"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/stone_btn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/custom_radio_button_selector"
+        android:contentDescription="stone button"
+        android:onClick="onClickOfImage"
+        android:tag="0"
+        app:layout_constraintEnd_toStartOf="@+id/paper_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_choose_img"
+        app:srcCompat="@drawable/precious_stone_diamond_svgrepo_com" />
+
+    <ImageButton
+        android:id="@+id/paper_btn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/custom_radio_button_selector"
+        android:contentDescription="paper button"
+        android:onClick="onClickOfImage"
+        android:tag="1"
+        app:layout_constraintBottom_toBottomOf="@+id/stone_btn"
+        app:layout_constraintEnd_toStartOf="@+id/scissor_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/stone_btn"
+        app:srcCompat="@drawable/paper_text_svgrepo_com" />
+
+    <ImageButton
+        android:id="@+id/scissor_btn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/custom_radio_button_selector"
+        android:contentDescription="scissor button"
+        android:onClick="onClickOfImage"
+        android:tag="2"
+        app:layout_constraintBottom_toBottomOf="@+id/paper_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/paper_btn"
+        app:srcCompat="@drawable/scissor_cut_cutter_scissors_office_school_svgrepo_com" />
+
+    <Button
+        android:id="@+id/refresh_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:onClick="onClickRefresh"
+        android:text="Refresh"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <RadioButton
-            android:id="@+id/stone_radio"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custom_radio_button_selector"
-            android:button="@android:color/transparent"
-            android:drawableTop="@drawable/precious_stone_diamond_svgrepo_com"
-            android:text="stone"
-            android:textAlignment="center" />
-
-        <RadioButton
-            android:id="@+id/paper_radio"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginHorizontal="20dp"
-            android:background="@drawable/custom_radio_button_selector"
-            android:button="@android:color/transparent"
-            android:drawableTop="@drawable/paper_text_svgrepo_com"
-            android:text="paper"
-            android:textAlignment="center" />
-
-        <RadioButton
-            android:id="@+id/scissor_radio"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginHorizontal="20dp"
-            android:background="@drawable/custom_radio_button_selector"
-            android:button="@android:color/transparent"
-            android:drawableTop="@drawable/scissor_cut_cutter_scissors_office_school_svgrepo_com"
-            android:text="scissor"
-            android:textAlignment="center" />
-
-    </RadioGroup>
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
