@@ -54,22 +54,22 @@ public class MainActivity extends AppCompatActivity {
                 double bmi=finalWeight/(height*height);
                if (bmi <18.5){
                    resultOutput.setText("Bmi is "+bmi+"\n Under weight");
-                   resultOutput.setBackgroundResource(R.color.yellow);
+                   resultOutput.setBackgroundResource(R.drawable.circulat_textview);
 //                   resultOutput.setVisibility(View.VISIBLE);
                }else if (bmi >=18.5 && bmi<25.0){
                    resultOutput.setText("Bmi is "+bmi+"\n Healthy weight");
 //                   resultOutput.setVisibility(View.VISIBLE);
-                   resultOutput.setBackgroundResource(R.color.green);
+                   resultOutput.setBackgroundResource(R.drawable.circulat_textview);
                }else if (bmi >=25.0 && bmi<30){
                    resultOutput.setText("Bmi is "+bmi+"\n Over weight");
-                   resultOutput.setBackgroundResource(R.color.red);
+                   resultOutput.setBackgroundResource(R.drawable.circulat_textview);
 
 //                   resultOutput.setVisibility(View.VISIBLE);
                }
                else {
                    resultOutput.setText("Bmi is "+bmi+"\nObese\nDANGER");
 //                 resultOutput.setVisibility(View.VISIBLE);
-                   resultOutput.setBackgroundResource(R.color.deepRed);
+                   resultOutput.setBackgroundResource(R.drawable.circulat_textview);
                }
             }
         });
