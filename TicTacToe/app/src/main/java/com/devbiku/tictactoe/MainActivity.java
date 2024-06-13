@@ -141,7 +141,6 @@ public class MainActivity extends AppCompatActivity {
         resultDialog.setTitle("Result").setMessage(result).setNegativeButton("Exit", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                finish();
 
             }
         }).setPositiveButton("New Game", new DialogInterface.OnClickListener() {
