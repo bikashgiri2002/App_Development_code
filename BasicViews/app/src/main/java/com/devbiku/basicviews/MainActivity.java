@@ -1,6 +1,8 @@
 package com.devbiku.basicviews;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,10 +17,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     Button home,return_home;
-    TextView text;
-    String str=", Load jagannath will help you grow in your life if you work hard and respect everyone and help the needy";
-    String enter;
+    String str =", Load jagannath will help you grow in your life if you work hard and respect everyone and help the needy";
+    static String enter;
     EditText name;
+    String newStr;
     CheckBox success,hard_work,happiness,pain,discipline,peace;
 
 
@@ -34,19 +36,16 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         home=findViewById(R.id.btn_contact_us);
-        text=findViewById(R.id.txt_result);
         name=findViewById(R.id.input_name);
-        name.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                text.setHeight(1000);
-            }
-        });
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                enter=name.getText().toString();
-                text.setText(enter+str);
+                enter = name.getText().toString();
+               Log.v("entered message:",enter);
+                Log.v("new string",enter+str);
+                Intent newIntent;
+                newIntent =new Intent(MainActivity.this , MessageActivity.class);
+                startActivity(newIntent);
             }
         });
         success=findViewById(R.id.checkbox_success);
