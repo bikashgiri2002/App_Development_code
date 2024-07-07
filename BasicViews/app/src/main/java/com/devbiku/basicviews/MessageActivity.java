@@ -1,5 +1,6 @@
 package com.devbiku.basicviews;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -12,7 +13,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MessageActivity extends AppCompatActivity {
     TextView text;
-    MainActivity message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +24,9 @@ public class MessageActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        message = new MainActivity();
-        Log.v("message",message.str);
-        Log.v("Enter",message.enter);
         text = findViewById(R.id.txt_output);
-        text.setText(message.enter + message.str);
+        Intent txtValue = getIntent();
+        String output = txtValue.getStringExtra("name");
+        text.setText(output);
     }
 }

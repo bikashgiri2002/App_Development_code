@@ -18,7 +18,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
     Button home,return_home;
     String str =", Load jagannath will help you grow in your life if you work hard and respect everyone and help the needy";
-    static String enter;
+    String enter;
     EditText name;
     String newStr;
     CheckBox success,hard_work,happiness,pain,discipline,peace;
@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 enter = name.getText().toString();
-               Log.v("entered message:",enter);
-                Log.v("new string",enter+str);
+                str = enter+str;
                 Intent newIntent;
                 newIntent =new Intent(MainActivity.this , MessageActivity.class);
+                newIntent.putExtra("name" ,str);
                 startActivity(newIntent);
             }
         });
