@@ -29,9 +29,13 @@ public class MainActivity extends AppCompatActivity {
         });
         Animation move = AnimationUtils.loadAnimation(this,R.anim.move_animation);
         Animation rotate = AnimationUtils.loadAnimation(this,R.anim.rotate_animation);
+        Animation alphaAnimation = AnimationUtils.loadAnimation(this,R.anim.alpha_animation);
+        Animation scaleAnimation = AnimationUtils.loadAnimation(this,R.anim.scale_animation);
         hello = findViewById(R.id.textView);
         translate = findViewById(R.id.translate);
         rotation = findViewById(R.id.rotation);
+        alpha = findViewById(R.id.alpha);
+        scale = findViewById(R.id.scale);
         translate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 hello.startAnimation(rotate);
+            }
+        });
+        alpha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hello.startAnimation(alphaAnimation);
+            }
+        });
+        scale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hello.startAnimation(scaleAnimation);
             }
         });
     }
