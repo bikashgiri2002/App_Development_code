@@ -47,11 +47,19 @@ public class MainActivity extends AppCompatActivity {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double finalWeight=Double.parseDouble(weight.getText().toString());
-                int height_feet=Integer.parseInt(feet.getText().toString());
-                int height_inch=Integer.parseInt(inch.getText().toString());
-                double height=(height_feet*0.3048)+(height_inch*0.0254);
-                double bmi=finalWeight/(height*height);
+                String finalWeight=weight.getText().toString();
+                String height_feet=feet.getText().toString();
+                String height_inch=inch.getText().toString();
+                // check for valid entry
+                if(finalWeight.isEmpty() || (height_feet.isEmpty() || height_inch.isEmpty())) {
+                   resultOutput.setText("enter valid data");
+                   return;
+                }
+                double weight = Double.parseDouble(finalWeight);
+                int feet = Integer.parseInt(height_feet);
+                int inch = Integer.parseInt(height_inch);
+                double height=(feet*0.3048)+(inch*0.0254);
+                double bmi=weight/(height*height);
                if (bmi <18.5){
                    resultOutput.setText("Bmi is "+bmi+"\n Under weight");
                    resultOutput.setBackgroundResource(R.color.yellow);
